@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/flcoin_bg.qm</file>
+        <file alias="de">locale/flcoin_de.qm</file>
+        <file alias="en">locale/flcoin_en.qm</file>
+        <file alias="es">locale/flcoin_es.qm</file>
+        <file alias="fi">locale/flcoin_fi.qm</file>
+        <file alias="fr">locale/flcoin_fr.qm</file>
+        <file alias="it">locale/flcoin_it.qm</file>
+        <file alias="ja">locale/flcoin_ja.qm</file>
+        <file alias="pl">locale/flcoin_pl.qm</file>
+        <file alias="pt">locale/flcoin_pt.qm</file>
+        <file alias="ru">locale/flcoin_ru.qm</file>
+        <file alias="sk">locale/flcoin_sk.qm</file>
+        <file alias="sv">locale/flcoin_sv.qm</file>
+        <file alias="vi">locale/flcoin_vi.qm</file>
+        <file alias="zh_CN">locale/flcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/flcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

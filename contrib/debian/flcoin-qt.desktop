@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=FLCoin
+Comment=FLCoin P2P Cryptocurrency
+Comment[fr]=FLCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=FLCoin, eşten eşe kriptografik sanal para birimi
+Exec=flcoin-qt %u
+Terminal=false
+Type=Application
+Icon=flcoin128
+MimeType=x-scheme-handler/flcoin;
+Categories=Office;Finance;

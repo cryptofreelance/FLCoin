@@ -1,0 +1,6 @@
+usr/local/bin/flcoin-qt usr/bin
+share/pixmaps/flcoin32.xpm usr/share/pixmaps
+share/pixmaps/flcoin16.xpm usr/share/pixmaps
+share/pixmaps/flcoin128.png usr/share/pixmaps
+debian/flcoin-qt.desktop usr/share/applications
+debian/flcoin-qt.protocol usr/share/kde4/services/
