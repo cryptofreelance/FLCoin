@@ -1239,13 +1239,14 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     } else if (nPrevHeight <= 1500 && nPrevHeight >= 1001) {
       nSubsidy = 34 * COIN;
     } else if (nPrevHeight <= 5000 && nPrevHeight >= 1501) {
-      nSubsidy = 8 * COIN;
+      nSubsidy = 46 * COIN;
     } else if (nPrevHeight <= 5800 && nPrevHeight >= 5001) {
       nSubsidy = 58 * COIN;
     } else if (nPrevHeight <= 10000 && nPrevHeight >= 5801) {
-      nSubsidy = 7 * COIN;
-    } else if (nPrevHeight >= 10001) {
-      nSubsidy = 5 * COIN;
+      nSubsidy = 27 * COIN;
+    } else if (nPrevHeight <= 200001 && nPrevHeight >= 10001) {
+      nSubsidy = 2 * COIN;
+
       for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
           nSubsidy -= nSubsidy / 5;
       }
@@ -1262,17 +1263,13 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     if (nHeight <= 500 && nHeight >= 0) {
       ret = 0;
     } else if (nHeight <= 1000 && nHeight >= 501) {
-      ret = blockValue / 100 * 25;
+      ret = blockValue / 100 * 90;
     } else if (nHeight <= 1500 && nHeight >= 1001) {
-      ret = blockValue / 100 * 75;
+      ret = blockValue / 100 * 95;
     } else if (nHeight <= 5000 && nHeight >= 1501) {
-      ret = blockValue / 100 * 34;
-    } else if (nHeight <= 5800 && nHeight >= 5001) {
-      ret = blockValue / 100 * 85;
-    } else if (nHeight <= 10000 && nHeight >= 5801) {
-      ret = blockValue / 5;
-    } else if (nHeight >= 10001) {
-      ret = blockValue / 3;
+      ret = blockValue / 100 * 97;
+    } else if (nHeight >= 5001) {
+      ret = blockValue / 100 * 99;
     }
 
    return ret;
