@@ -1230,26 +1230,22 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
 
-    CAmount nSubsidy = 5 * COIN;
+    CAmount nSubsidy = 2 * COIN;
 
     if (nPrevHeight == 0) {
       nSubsidy = 500000 * COIN;
     } else if (nPrevHeight <= 1000 && nPrevHeight >= 1) {
       nSubsidy = 10 * COIN;
-    } else if (nPrevHeight <= 1500 && nPrevHeight >= 1001) {
+    } else if (nPrevHeight <= 3000 && nPrevHeight >= 1001) {
       nSubsidy = 34 * COIN;
-    } else if (nPrevHeight <= 5000 && nPrevHeight >= 1501) {
+    } else if (nPrevHeight <= 10000 && nPrevHeight >= 3001) {
       nSubsidy = 46 * COIN;
-    } else if (nPrevHeight <= 5800 && nPrevHeight >= 5001) {
+    } else if (nPrevHeight <= 25000 && nPrevHeight >= 10001) {
       nSubsidy = 58 * COIN;
-    } else if (nPrevHeight <= 10000 && nPrevHeight >= 5801) {
+    } else if (nPrevHeight <= 100000 && nPrevHeight >= 25001) {
       nSubsidy = 27 * COIN;
-    } else if (nPrevHeight <= 200001 && nPrevHeight >= 10001) {
-      nSubsidy = 2 * COIN;
-
-      for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-          nSubsidy -= nSubsidy / 5;
-      }
+    } else if (nPrevHeight <= 200000 && nPrevHeight >= 100001) {
+      nSubsidy = 7 * COIN;
     }
 
     return nSubsidy;
@@ -1263,16 +1259,22 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     if (nHeight <= 500 && nHeight >= 0) {
       ret = 0;
     } else if (nHeight <= 1000 && nHeight >= 501) {
-      ret = blockValue / 100 * 90;
-    } else if (nHeight <= 1500 && nHeight >= 1001) {
       ret = blockValue / 100 * 95;
-    } else if (nHeight <= 5000 && nHeight >= 1501) {
-      ret = blockValue / 100 * 97;
-    } else if (nHeight >= 5001) {
+    } else if (nHeight <= 3000 && nHeight >= 1001) {
+      ret = blockValue / 100 * 98;
+    } else if (nHeight <= 10000 && nHeight >= 3001) {
+      ret = blockValue / 100 * 98;
+    } else if (nHeight <= 25000 && nHeight >= 10001) {
+      ret = blockValue / 100 * 98;
+    } else if (nHeight <= 100000 && nHeight >= 25001) {
+      ret = blockValue / 100 * 98;
+    } else if (nHeight <= 200000 && nHeight >= 100001) {
+      ret = blockValue / 100 * 99;
+    } else if (nHeight >= 200001) {
       ret = blockValue / 100 * 99;
     }
-
-   return ret;
+    
+    return ret;
 }
 
 bool IsInitialBlockDownload()
