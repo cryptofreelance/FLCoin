@@ -93,6 +93,14 @@ struct Params {
         return nPowTargetSpacing;
       }
     }
+
+    int64_t GetDGWPastBlocks(int blockHeight) const {
+      if (blockHeight >= mPowReconfigureHeight) {
+        return 30;
+      } else {
+        return 24;
+      }
+    }
 };
 } // namespace Consensus
 
