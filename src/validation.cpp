@@ -1480,7 +1480,7 @@ bool CheckTxInputs(const CTransaction& tx, CValidationState& state, const CCoins
 
             // If prev is coinbase, check that it's matured
             if (coins->IsCoinBase()) {
-              if (nSpendHeight > 600) {
+              if (nSpendHeight > 500) {
                 if (nSpendHeight - coins->nHeight < COINBASE_MATURITY_NEW) {
                   return state.Invalid(false,
                       REJECT_INVALID, "---- check ----",

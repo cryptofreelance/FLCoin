@@ -73,7 +73,7 @@ public:
         consensus.nPowTargetTimespan = 5 * 60;
         consensus.nPowTargetSpacing = 5 * 60;
 
-        consensus.mPowReconfigureHeight = 600;
+        consensus.mPowReconfigureHeight = 500;
         consensus.nPowNewTargetSpacing = 90;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
