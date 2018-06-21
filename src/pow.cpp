@@ -83,7 +83,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
 unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params) {
     /* current difficulty formula, flcoin - DarkGravity v3, written by Evan Duffield - evan@flcoin.org */
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
-    params.GetDGWPastBlocks(pindexLast->nHeight);
+    int64_t nPastBlocks = params.GetDGWPastBlocks(pindexLast->nHeight);
 
     // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
     if (!pindexLast || pindexLast->nHeight < nPastBlocks) {
