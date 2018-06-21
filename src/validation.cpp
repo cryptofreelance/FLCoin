@@ -1273,7 +1273,7 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     } else if (nHeight >= 200001) {
       ret = blockValue / 100 * 99;
     }
-    
+
     return ret;
 }
 
@@ -1480,10 +1480,18 @@ bool CheckTxInputs(const CTransaction& tx, CValidationState& state, const CCoins
 
             // If prev is coinbase, check that it's matured
             if (coins->IsCoinBase()) {
+              if(nSpendHeight > 450) {
+                if (nSpendHeight - coins->nHeight < COINBASE_MATURITY_NEW)
+                    return state.Invalid(false,
+                        REJECT_INVALID, "bad-txns-premature-spend-of-coinbase",
+                        strprintf("after 450 tried to spend coinbase at depth %d", nSpendHeight - coins->nHeight));
+              } else {
                 if (nSpendHeight - coins->nHeight < COINBASE_MATURITY)
                     return state.Invalid(false,
                         REJECT_INVALID, "bad-txns-premature-spend-of-coinbase",
                         strprintf("tried to spend coinbase at depth %d", nSpendHeight - coins->nHeight));
+              }
+
             }
 
             // Check for negative or overflow input values
