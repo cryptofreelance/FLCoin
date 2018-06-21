@@ -66,8 +66,8 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("0x001");
+        consensus.BIP34Height = 440;
+        consensus.BIP34Hash = uint256S("0x000000000220688b58d7cda01cda26634934295308c9f6e24fcc76d01d63e6aa");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
 
         consensus.nPowTargetTimespan = 5 * 60;
@@ -97,10 +97,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0"); // 10 000 block
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000f2ab5699d1f1");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0"); // 10 000 block
+        consensus.defaultAssumeValid = uint256S("0x000000000220688b58d7cda01cda26634934295308c9f6e24fcc76d01d63e6aa");
 
         pchMessageStart[0] = 0x83;
         pchMessageStart[1] = 0x23;
