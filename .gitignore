@@ -13,7 +13,7 @@ src/flcoin-tx
 src/test/test_flcoin
 src/qt/test/test_flcoin-qt
 src/bench/bench_flcoin
-
+FLCoin-Qt.app
 # autoreconf
 Makefile.in
 aclocal.m4
