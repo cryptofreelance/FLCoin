@@ -21,6 +21,8 @@ inline unsigned int MaxBlockSigOps(bool fDIP0001Active /*= false */)
 }
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 60;
+static const int COINBASE_MATURITY_NEW = 240;
+static const int TIME_MATURITY = 1529578588; //1529670411
 
 /** Flags for nSequence and nLockTime locks */
 enum {
